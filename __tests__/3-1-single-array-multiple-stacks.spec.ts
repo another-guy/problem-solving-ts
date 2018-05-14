@@ -1,7 +1,64 @@
 import {
   DoubleStack,
+  MultiStack,
   SingleStack,
 } from '../src/cracking-the-coding-interview/3-stacks-and-queues/3-1-single-array-multiple-stacks';
+
+describe(MultiStack.name, () => {
+  it(`Should pass a pre-scripted end-to-end test`, () => {
+    const capacity = 6;
+    const stack = new MultiStack(3, capacity);
+    expect(stack.data).toEqual([0, -1, -1, -1, ...new Array(capacity * 2)]);
+
+    stack.push(1, 10);
+    expect(stack.data).toEqual([1, 0, -1, -1, 10, -1, ...new Array((capacity - 1) * 2)]);
+
+    stack.push(2, 20);
+    expect(stack.data).toEqual([2, 0, 1, -1, 10, -1, 20, -1, ...new Array((capacity - 2) * 2)]);
+    
+    stack.push(3, 30);
+    expect(stack.data).toEqual([3, 0, 1, 2, 10, -1, 20, -1, 30, -1, ...new Array((capacity - 3) * 2)]);
+    
+    stack.push(1, 11);
+    expect(stack.data).toEqual([4, 3, 1, 2, 10, -1, 20, -1, 30, -1, 11, 0, ...new Array((capacity - 4) * 2)]);
+    
+    stack.push(2, 21);
+    expect(stack.data).toEqual([5, 3, 4, 2, 10, -1, 20, -1, 30, -1, 11, 0, 21, 1, ...new Array((capacity - 5) * 2)]);
+
+    let poppedValue;
+    poppedValue = stack.pop(1);
+    expect(poppedValue).toBe(11);
+    expect(stack.data).toEqual([3, 0, 4, 2, 10, -1, 20, -1, 30, -1, null, 5, 21, 1, ...new Array((capacity - 5) * 2)]);
+
+    poppedValue = stack.pop(1);
+    expect(poppedValue).toBe(10);
+    expect(stack.data).toEqual([0, -1, 4, 2, null, 3, 20, -1, 30, -1, null, 5, 21, 1, ...new Array((capacity - 5) * 2)]);
+
+    poppedValue = stack.pop(2);
+    expect(poppedValue).toBe(21);
+    expect(stack.data).toEqual([4, -1, 1, 2, null, 3, 20, -1, 30, -1, null, 5, null, 0, ...new Array((capacity - 5) * 2)]);
+    
+    stack.push(3, 31);
+    expect(stack.data).toEqual([0, -1, 1, 4, null, 3, 20, -1, 30, -1, null, 5, 31, 2, ...new Array((capacity - 5) * 2)]);
+
+    stack.push(3, 32);
+    expect(stack.data).toEqual([3, -1, 1, 0, 32, 4, 20, -1, 30, -1, null, 5, 31, 2, ...new Array((capacity - 5) * 2)]);
+    
+    stack.push(3, 33);
+    expect(stack.data).toEqual([5, -1, 1, 3, 32, 4, 20, -1, 30, -1, 33, 0, 31, 2, ...new Array((capacity - 5) * 2)]);
+    
+    expect(stack.outOfSpace).toBeFalsy();
+
+    stack.push(3, 34);
+    expect(stack.data).toEqual([6, -1, 1, 5, 32, 4, 20, -1, 30, -1, 33, 0, 31, 2, 34, 3, ...new Array((capacity - 6) * 2)]);
+
+    expect(stack.outOfSpace).toBeTruthy();
+
+    expect(() => stack.push(1, 42)).toThrow(`No more space available`);
+
+    expect(() => stack.pop(1)).toThrow(`Nothing to pop`);
+  });
+});
 
 describe(DoubleStack.name, () => {
   describe(`left stack`, () => {

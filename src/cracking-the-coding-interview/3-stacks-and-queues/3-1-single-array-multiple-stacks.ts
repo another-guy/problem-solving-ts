@@ -4,6 +4,84 @@
 
 export const DEFAULT_STACK_CAPACITY = 1024;
 
+export class MultiStack {
+  data: number[];
+
+  readonly LENGTH_OF_VIRTUAL = 2;
+  readonly RESERVED_COUNT = 1;
+  get nextFreeVirtualIndex(): number { return this.data[0]; }
+  set nextFreeVirtualIndex(value: number) { this.data[0] = value; }
+
+  getHeadVirtualIndex(stackNumber: number) { return this.data[stackNumber + this.RESERVED_COUNT - 1]; }
+  setHeadVirtualIndex(stackNumber: number, virtualIndex: number) { return this.data[stackNumber + this.RESERVED_COUNT - 1] = virtualIndex; }
+
+  private getVirtual(virtualIndex: number): number[] {
+    const index = this.RESERVED_COUNT + this.numberOfStacks + virtualIndex * this.LENGTH_OF_VIRTUAL;
+    return this.data.slice(index, index + this.LENGTH_OF_VIRTUAL + 1);
+  }
+
+  private setVirtual(virtualIndex: number, values: number[]): void {
+    const index = this.RESERVED_COUNT + this.numberOfStacks + virtualIndex * this.LENGTH_OF_VIRTUAL;
+    this.data.splice(index, this.LENGTH_OF_VIRTUAL, ...values);
+  }
+
+  constructor(
+    private numberOfStacks: number,
+    private capacity: number = DEFAULT_STACK_CAPACITY,
+  ) {
+    this.data = new Array(this.RESERVED_COUNT + this.numberOfStacks + this.capacity * this.LENGTH_OF_VIRTUAL);
+    this.nextFreeVirtualIndex = 0;
+    for (let stackNumber = 1; stackNumber <= this.numberOfStacks; stackNumber++) {
+      this.setHeadVirtualIndex(stackNumber, -1);
+    }
+  }
+
+  printState(prefix: string): void {
+    console.info(`\n${prefix}:\n${JSON.stringify(this.data)}`);
+  }
+
+  push(stackNumber: number, value: number): void {
+    if (this.outOfSpace) {
+      throw new Error(`No more space available`);
+    }
+
+    const insertionVirtualIndex = this.nextFreeVirtualIndex;
+    const [ _1, afterNextFreeVirtualIndex ] = this.getVirtual(insertionVirtualIndex);
+    const newNextFreeVirtualIndex = afterNextFreeVirtualIndex === undefined ? insertionVirtualIndex + 1 : afterNextFreeVirtualIndex;
+
+    const currentHeadVirtualIndex = this.getHeadVirtualIndex(stackNumber);
+    this.setVirtual(insertionVirtualIndex, [ value, currentHeadVirtualIndex ]);
+    this.setHeadVirtualIndex(stackNumber, insertionVirtualIndex);
+
+    this.nextFreeVirtualIndex = newNextFreeVirtualIndex;
+  }
+
+  pop(stackNumber: number): number {
+    if (this.isEmpty(stackNumber)) {
+      throw new Error(`Nothing to pop`);
+    }
+
+    const retrievalVirtualIndex = this.getHeadVirtualIndex(stackNumber);
+    const [ value, tailVirtualIndex ] = this.getVirtual(retrievalVirtualIndex);
+    this.setHeadVirtualIndex(stackNumber, tailVirtualIndex);
+
+    const freeVirtualIndex = this.nextFreeVirtualIndex;
+    this.setVirtual(retrievalVirtualIndex, [ <any>null, freeVirtualIndex ]);
+    this.nextFreeVirtualIndex = retrievalVirtualIndex;
+
+    return value;
+  }
+
+  isEmpty(stackNumber: number): boolean {
+    return this.getHeadVirtualIndex(stackNumber) === -1;
+  }
+
+  get outOfSpace(): boolean {
+    return this.nextFreeVirtualIndex === this.capacity;
+  }
+
+}
+
 export class DoubleStack {
   data: number[];
   topLeftIndex: number;
