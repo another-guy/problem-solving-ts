@@ -2,11 +2,13 @@
 
 ## Table of Contents
 
-1. TODO
-2. TODO
-3. TODO
-4. TODO
-5. [Bitwise Operations Cheat Sheet](https://github.com/another-guy/problem-solving-ts/blob/master/src/cracking-the-coding-interview/5-bit-manipulation/5-0-cheat-sheet.md)
+1. CodinGame
+1. Cracking the Coding Interview
+    1. TODO
+    1. TODO
+    1. TODO
+    1. TODO
+    1. [Bitwise Operations Cheat Sheet](https://github.com/another-guy/problem-solving-ts/blob/master/src/cracking-the-coding-interview/5-bit-manipulation/5-0-cheat-sheet.md)
 
 ## Other
 
