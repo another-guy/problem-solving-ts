@@ -7,6 +7,7 @@
     * 1 TODO
     * 2 TODO
     * 3 Stacks and Queues
+        * 3.1 [MultiStack](https://github.com/another-guy/problem-solving-ts/blob/master/src/cracking-the-coding-interview/3-stacks-and-queues/3-1-single-array-multiple-stacks.cr.md)
     * 4 Graphs
     * 5 Bit Manipulation
         * 5.0 [Bitwise Operations Cheat Sheet](https://github.com/another-guy/problem-solving-ts/blob/master/src/cracking-the-coding-interview/5-bit-manipulation/5-0-cheat-sheet.md)
