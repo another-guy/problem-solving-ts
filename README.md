@@ -4,11 +4,16 @@
 
 1. CodinGame
 1. Cracking the Coding Interview
-    1. TODO
-    1. TODO
-    1. TODO
-    1. TODO
-    1. [Bitwise Operations Cheat Sheet](https://github.com/another-guy/problem-solving-ts/blob/master/src/cracking-the-coding-interview/5-bit-manipulation/5-0-cheat-sheet.md)
+    * 1 TODO
+    * 2 TODO
+    * 3 Stacks and Queues
+    * 4 Graphs
+    * 5 Bit Manipulation
+        * 5.0 [Bitwise Operations Cheat Sheet](https://github.com/another-guy/problem-solving-ts/blob/master/src/cracking-the-coding-interview/5-bit-manipulation/5-0-cheat-sheet.md)
+        * 5.3 [Flip bit to win](https://github.com/another-guy/problem-solving-ts/blob/master/src/cracking-the-coding-interview/5-bit-manipulation/5-3-flip-to-win.cr.md)
+    * 6 TODO
+    * 7 TODO
+    * 8 Recursion and Dynamic Programming
 
 ## Other
 
