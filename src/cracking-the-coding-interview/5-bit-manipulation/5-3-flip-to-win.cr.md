@@ -1,6 +1,6 @@
 # Find the longest length of sequence of 1-bits achievable by flipping a single bit from 0 to 1 in a number
 
-[javascript] [interview-questions] [bitwise]
+[javascript] [interview-questions] [bitwise] [ecmascript-6]
 
 See on [CodeReview StackExchange](https://codereview.stackexchange.com/questions/194733/find-the-longest-length-of-sequence-of-1-bits-achievable-by-flipping-a-single-bi)
 
