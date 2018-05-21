@@ -13,16 +13,22 @@
 ## Table of Contents
 
 1. CodinGame
+    * Easy
+        * Chuck Norris (message encoding)
 1. Cracking the Coding Interview
     * 1 TODO
     * 2 TODO
     * 3 Stacks and Queues
         * 3.1 [MultiStack](https://github.com/another-guy/problem-solving-ts/blob/master/src/cracking-the-coding-interview/3-stacks-and-queues/3-1-single-array-multiple-stacks.cr.md)
     * 4 Graphs
+        * 4.1 Existence of path between nodes
     * 5 Bit Manipulation
         * 5.0 [Bitwise Operations Cheat Sheet](https://github.com/another-guy/problem-solving-ts/blob/master/src/cracking-the-coding-interview/5-bit-manipulation/5-0-cheat-sheet.md)
+        * 5.1 Insert one bit sequence into another
         * 5.3 [Flip bit to win](https://github.com/another-guy/problem-solving-ts/blob/master/src/cracking-the-coding-interview/5-bit-manipulation/5-3-flip-to-win.cr.md)
     * 6 TODO
     * 7 TODO
     * 8 Recursion and Dynamic Programming
+        * 8.1 Triple step
+        * 8.2 Robot in a grid
 
