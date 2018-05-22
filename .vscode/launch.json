@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Debug file",
-      "program": "${workspaceRoot}/lib/${fileBasenameNoExtension}.js",
+      "program": "${workspaceRoot}/lib/index.js",
       "cwd": "${workspaceRoot}",
       "sourceMaps": true,
       "smartStep": true,
