@@ -4,7 +4,7 @@ export type X = 'x';
 export type _ = ' ';
 
 export function findPathRecursively(grid: Grid, r?: number, c?: number): Move[] | null {
-  if (!grid.length) return null;
+  if (!grid || !grid.length) return null;
 
   r = r != null ? r : grid.length - 1;
   c = c != null ? c : grid[0].length - 1;
@@ -57,7 +57,7 @@ function lookLeft(
 }
 
 export function findPath(grid: Grid): Move[] | null {
-  if (!grid.length) return null;
+  if (!grid || !grid.length) return null;
 
   const hintTable: string[][] = [];
   const path: Move[] = [];
@@ -73,9 +73,11 @@ export function findPath(grid: Grid): Move[] | null {
       const upperLeftCorner = rowIndex === 0 && columnIndex === 0;
       const bottomRightCorner = rowIndex === maxRowIndex && columnIndex === maxColumnIndex;
 
-      if (upperLeftCorner) return path;
-      else if (bottomRightCorner) return null;
-      else {
+      if (upperLeftCorner) {
+        return grid[rowIndex][columnIndex] === 'x' ? null : path;
+      } else if (bottomRightCorner) {
+        return null;
+      } else {
         markNoPath(hintTable, rowIndex, columnIndex);
         const lastMove = path.shift();
         if (lastMove === 'down') rowIndex++;

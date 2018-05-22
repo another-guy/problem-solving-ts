@@ -4,6 +4,10 @@ import {
   Grid,
 } from '../src/cracking-the-coding-interview/8-recursion-and-dynamic-programming/8-2-robot-in-a-grid';
 
+const nullGrid: Grid = null;
+
+const gridWithSingleBlockedCell: Grid = [['x']];
+
 const emptyGrid: Grid = [[]];
 
 const oneByOneGrid: Grid = [[' ']];
@@ -40,6 +44,8 @@ const cliffGrid: Grid = [
 
 describe(`${findPathRecursively.name} & ${findPath.name}`, () => {
   [
+    { grid: nullGrid, expectedPath: null },
+    { grid: gridWithSingleBlockedCell, expectedPath: null },
     { grid: emptyGrid, expectedPath: null },
     { grid: oneByOneGrid, expectedPath: [] },
     { grid: oneByTwoGrid, expectedPath: ['right'] },
