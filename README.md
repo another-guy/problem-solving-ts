@@ -29,6 +29,5 @@
     * 6 TODO
     * 7 TODO
     * 8 Recursion and Dynamic Programming
-        * 8.1 Triple step
-        * 8.2 Robot in a grid
-
+        * 8.1 Triple step (non-recursive)
+        * 8.2 Robot in a grid (recursive and non-recursive)
