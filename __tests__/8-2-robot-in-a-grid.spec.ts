@@ -1,4 +1,5 @@
 import {
+  findPath,
   findPathRecursively,
   Grid,
 } from '../src/cracking-the-coding-interview/8-recursion-and-dynamic-programming/8-2-robot-in-a-grid';
@@ -37,7 +38,7 @@ const cliffGrid: Grid = [
   [' ', ' ', ' ', ' ', ' '],
 ];
 
-describe(findPathRecursively.name, () => {
+describe(`${findPathRecursively.name} & ${findPath.name}`, () => {
   [
     { grid: emptyGrid, expectedPath: null },
     { grid: oneByOneGrid, expectedPath: [] },
@@ -61,8 +62,12 @@ describe(findPathRecursively.name, () => {
     const path = expectedPath == null ? 'null' : expectedPath.join('->');
     const gridText = JSON.stringify(grid, null, 2);
 
-    it(`Should return "${path}" for grid\n${gridText}`, () => {
+    it(`[Recursive] Should return "${path}" for grid\n${gridText}`, () => {
       expect(findPathRecursively(grid)).toEqual(expectedPath);
+    });
+
+    it(`[Non-recursive] Should return "${path}" for grid\n${gridText}`, () => {
+      expect(findPath(grid)).toEqual(expectedPath);
     });
   });
 });
