@@ -3,25 +3,25 @@ export type Move = 'down' | 'right';
 export type X = 'x';
 export type _ = ' ';
 
-export function findPathRecursively(grid: Grid, r?: number, c?: number): Move[] | null {
+export function findPathRecursively(grid: Grid, rowIndex?: number, columnIndex?: number): Move[] | null {
   if (!grid || !grid.length) return null;
 
-  r = r != null ? r : grid.length - 1;
-  c = c != null ? c : grid[0].length - 1;
+  rowIndex = rowIndex != null ? rowIndex : grid.length - 1;
+  columnIndex = columnIndex != null ? columnIndex : grid[0].length - 1;
 
-  const canGoUp = r > 0 && grid[r - 1][c] === ' ';
-  const canGoLeft = c > 0 && grid[r][c - 1] === ' ';
-  if (r === 0 && c === 0) {
-    return grid[r][c] === 'x' ? null : [];
+  const canGoUp = rowIndex > 0 && grid[rowIndex - 1][columnIndex] === ' ';
+  const canGoLeft = columnIndex > 0 && grid[rowIndex][columnIndex - 1] === ' ';
+  if (rowIndex === 0 && columnIndex === 0) {
+    return grid[rowIndex][columnIndex] === 'x' ? null : [];
   }
   
   if (canGoUp) {
-    const pathToUpper = findPathRecursively(grid, r - 1, c);
+    const pathToUpper = findPathRecursively(grid, rowIndex - 1, columnIndex);
     if (pathToUpper) return [...pathToUpper, 'down'];
   }
 
   if (canGoLeft) {
-    const pathToLeft = findPathRecursively(grid, r, c - 1);
+    const pathToLeft = findPathRecursively(grid, rowIndex, columnIndex - 1);
     if (pathToLeft) return [...pathToLeft, 'right'];
   }
 
