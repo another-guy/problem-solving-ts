@@ -26,7 +26,8 @@
         * 5.0 [Bitwise Operations Cheat Sheet](https://github.com/another-guy/problem-solving-ts/blob/master/src/cracking-the-coding-interview/5-bit-manipulation/5-0-cheat-sheet.md)
         * 5.1 Insert one bit sequence into another
         * 5.3 [Flip bit to win](https://github.com/another-guy/problem-solving-ts/blob/master/src/cracking-the-coding-interview/5-bit-manipulation/5-3-flip-to-win.cr.md). [[Code Review]](https://codereview.stackexchange.com/questions/194733/find-the-longest-length-of-sequence-of-1-bits-achievable-by-flipping-a-single-bi)
-    * 6 TODO
+    * 6 Math and Logic Puzzles
+        * 6.2 Basketball
     * 7 TODO
     * 8 Recursion and Dynamic Programming
         * 8.1 Triple step (non-recursive)
