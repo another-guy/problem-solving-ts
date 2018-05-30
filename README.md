@@ -12,10 +12,13 @@
 
 ## Table of Contents
 
+1. Practice
+    * 1 Graph
+        * 1.1 TopSort (Topological Sorting)
 1. CodinGame
     * Easy
         * Chuck Norris (message encoding)
-1. Cracking the Coding Interview
+2. Cracking the Coding Interview
     * 1 TODO
     * 2 TODO
     * 3 Stacks and Queues
