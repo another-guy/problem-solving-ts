@@ -1,5 +1,5 @@
-import { IGraph } from '../src/practice/graph';
-import { isTopSort, pathExists, topSort } from '../src/practice/top-sort';
+import { IGraph } from '../src/practice/0-directed-graph';
+import { isTopSort, pathExists, topSort } from '../src/practice/1-1-top-sort';
 
 export const singleNode: IGraph = {
   nodes: ['a'],

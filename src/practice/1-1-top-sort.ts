@@ -1,4 +1,4 @@
-import { IGraph } from './graph';
+import { IGraph } from './0-directed-graph';
 
 export function topSort(
   graph: IGraph,
