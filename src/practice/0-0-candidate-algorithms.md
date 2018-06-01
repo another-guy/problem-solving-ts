@@ -20,3 +20,7 @@
 * Quicksort
 * Merge sort
 * Heap sort
+
+## Other
+
+* Priority queue
