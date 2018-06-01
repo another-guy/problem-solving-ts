@@ -1,8 +1,14 @@
 import { IPriorityQueue } from './0-priority-queue';
 
+export type PriorityMode = 'max-first' | 'min-first';
+
 export class DummyPriorityQueue<T> implements IPriorityQueue<T> {
 
   _underlyingStorage: { [priorityKey: string]: T[] } = {};
+
+  constructor(
+    private config: { mode: PriorityMode } = { mode: 'max-first' },
+  ) {}
 
   isEmpty(): boolean {
     return Object.keys(this._underlyingStorage).length === 0;
@@ -36,7 +42,8 @@ export class DummyPriorityQueue<T> implements IPriorityQueue<T> {
 
   private get highestPriorityKey(): string {
     const keys = Object.keys(this._underlyingStorage);
-    return keys[keys.length - 1];
+    const index = this.config.mode === 'max-first' ? keys.length - 1 : 0;
+    return keys[index];
   }
 
 }
