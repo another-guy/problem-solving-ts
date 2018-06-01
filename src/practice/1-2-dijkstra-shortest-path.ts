@@ -1,5 +1,16 @@
 import { IGraph } from './0-undirected-graph';
- 
+
+const infinity = Number.POSITIVE_INFINITY;
+
+export type DistanceEntry = {
+  from: string | null,
+  distance: number,
+};
+
+export type DistanceToList = {
+  [ dest: string ]: DistanceEntry,
+};
+
 export interface IPath {
   nodeList: string[];
   distance: number;
@@ -10,44 +21,27 @@ export function dijkstraShortestPath(
   sourceNode: string,
   destinationNode: string,
 ): IPath {
-  const edges = new Set(graph.edges);
-  const distanceTo = graph.nodes
-    .reduce(
-      (result, node) => (
-        result[node] = {
-          from: null,
-          distance: node === sourceNode ? 0 : Number.MAX_SAFE_INTEGER,
-        },
-        result
-      ),
-      {} as { [ dest: string ]: { from: string | null, distance: number } }
-    );
- 
-  const unvisited = new Set(graph.nodes);
+  const unvisitedNodes = new Set(graph.nodes);
+  const unvisitedEdges = new Set(graph.edges);
+  const distanceTo = initializeDistances(graph.nodes, sourceNode);
  
   let currentNode: string | undefined = sourceNode;
   do {
-    unvisited.delete(currentNode);
+    unvisitedNodes.delete(currentNode);
  
-    for (let edge of edges)
+    for (const edge of unvisitedEdges)
       if (edge.source === currentNode || edge.destination === currentNode) {
-        edges.delete(edge);
+        unvisitedEdges.delete(edge);
  
-        const neighbor = edge.source === currentNode ? edge.destination : edge.source;
+        const neighborNode = edge.source === currentNode ? edge.destination : edge.source;
         const alternativeDistance = distanceTo[currentNode].distance + edge.distance;
  
-        if (alternativeDistance < distanceTo[neighbor].distance) {
-          distanceTo[neighbor] = { from: currentNode, distance: alternativeDistance };
+        if (alternativeDistance < distanceTo[neighborNode].distance) {
+          distanceTo[neighborNode] = { from: currentNode, distance: alternativeDistance };
         }
       }
  
-    // current = unvisited node with shortest `distance` path to it
-    let closestUnvisitedEntry = (Object
-      .entries(distanceTo)
-      .sort((entry1, entry2) => entry1["1"].distance - entry2["1"].distance)
-      .find(entry => unvisited.has(entry["0"])));
-    currentNode = closestUnvisitedEntry && closestUnvisitedEntry["0"];
- 
+    currentNode = closestUnvisitedEntry(distanceTo, unvisitedNodes);
   } while (currentNode);
  
   return {
@@ -55,15 +49,49 @@ export function dijkstraShortestPath(
     nodeList: unwindPath(distanceTo, destinationNode),
   };
 }
+
+export function initializeDistances(
+  nodes: string[],
+  sourceNode: string,
+): DistanceToList {
+  return nodes
+    .reduce(
+      (result, node) => (
+        result[node] = {
+          from: null,
+          distance: node === sourceNode ? 0 : infinity,
+        },
+        result
+      ),
+      {} as DistanceToList,
+    );
+}
+
+export function closestUnvisitedEntry(
+  distanceTo: DistanceToList,
+  unvisitedNodes: Set<string>,
+): string | undefined {
+  let resultNode;
+  let minimalDistance = infinity;
+  for (const node of Object.keys(distanceTo)) {
+    const nodeDistance = distanceTo[node].distance;
+    if (unvisitedNodes.has(node) && nodeDistance < minimalDistance)
+    {
+      resultNode = node;
+      minimalDistance = nodeDistance;
+    }
+  }
+  return resultNode;
+}
  
 export function unwindPath(
-  distanceTo: { [dest: string]: { from: string | null, distance: number } },
+  distanceTo: DistanceToList,
   destinationNode: string,
 ) {
   const path: string[] = [ destinationNode ];
   let currentNode: string | null = destinationNode;
   do {
-    const entry: { from: string | null, distance: number } = distanceTo[currentNode];
+    const entry: DistanceEntry = distanceTo[currentNode];
     currentNode = entry.from;
     if (currentNode) path.unshift(currentNode);
   } while (currentNode);
