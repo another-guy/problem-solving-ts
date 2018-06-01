@@ -1,4 +1,4 @@
-import { IGraph } from './0-undirected-graph';
+import { IUndirectedGraph } from './0-undirected-graph';
 
 const infinity = Number.POSITIVE_INFINITY;
 
@@ -17,7 +17,7 @@ export interface IPath {
 }
  
 export function dijkstraShortestPath(
-  graph: IGraph,
+  graph: IUndirectedGraph,
   sourceNode: string,
   destinationNode: string,
 ): IPath {

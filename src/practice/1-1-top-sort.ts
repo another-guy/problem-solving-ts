@@ -1,7 +1,7 @@
-import { IGraph } from './0-directed-graph';
+import { IDirectedGraph } from './0-directed-graph';
 
 export function topSort(
-  graph: IGraph,
+  graph: IDirectedGraph,
 ): string[] {
   const ordered: string[] = [];
   const notVisited = new Set(graph.nodes);
@@ -39,7 +39,7 @@ export function nodesWithoutIncomingEdges(
 
 export function isTopSort(
   orderedNodes: string[],
-  graph: IGraph,
+  graph: IDirectedGraph,
 ): boolean {
   if (graph.nodes.length !== (orderedNodes || []).length) return false;
 
@@ -53,7 +53,7 @@ export function isTopSort(
   return true;
 }
 
-export function pathExists(source: string, destination: string, graph: IGraph): boolean {
+export function pathExists(source: string, destination: string, graph: IDirectedGraph): boolean {
   const toVisit = [source];
   const visited = new Set<string | undefined>([]);
 

@@ -4,7 +4,7 @@ export interface IEdge {
   distance: number;
 }
 
-export interface IGraph {
+export interface IUndirectedGraph {
   nodes: string[];
   edges: IEdge[];
 }
