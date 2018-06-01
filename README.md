@@ -13,12 +13,14 @@
 ## Table of Contents
 
 1. Practice
+    * [Candidate algorithms](https://github.com/another-guy/problem-solving-ts/blob/master/src/practice/0-0-candidate-algorithms.md)
     * 1 Graph
         * 1.1 TopSort (Topological Sorting)
+        * 1.2 Dijkstra's shortest path
 1. CodinGame
     * Easy
         * Chuck Norris (message encoding)
-2. Cracking the Coding Interview
+1. Cracking the Coding Interview
     * 1 TODO
     * 2 TODO
     * 3 Stacks and Queues
