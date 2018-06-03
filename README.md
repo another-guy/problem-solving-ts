@@ -17,6 +17,8 @@
     * 1 Graph
         * 1.1 TopSort (Topological Sorting)
         * 1.2 Dijkstra's shortest path
+        * 1.3 Prim's minimal spanning tree
+    * 9 Naive (hashtable-based) PriorityQueue
 1. CodinGame
     * Easy
         * Chuck Norris (message encoding)

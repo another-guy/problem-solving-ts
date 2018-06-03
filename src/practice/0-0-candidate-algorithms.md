@@ -7,7 +7,6 @@
 * Flood fill
 * Graph coloring
 * Graph connectivity
-* Prim's minimal spanning tree
 * Kruskal's minimal spanning tree
 
 ## Tree
