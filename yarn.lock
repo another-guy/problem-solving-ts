@@ -2623,9 +2623,9 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.5.2:
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.12.1.tgz#c1ad20e803e7749faf905a409d2367e06bbe7325"
+prettier@^1.13.4:
+  version "1.13.4"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.4.tgz#31bbae6990f13b1093187c731766a14036fa72e6"
 
 pretty-format@^22.4.3:
   version "22.4.3"
@@ -3024,6 +3024,13 @@ source-map-support@^0.5.0:
     buffer-from "^1.0.0"
     source-map "^0.6.0"
 
+source-map-support@^0.5.5:
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.6.tgz#4435cee46b1aab62b8e8610ce60f788091c51c13"
+  dependencies:
+    buffer-from "^1.0.0"
+    source-map "^0.6.0"
+
 source-map-url@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
@@ -3263,9 +3270,9 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-ts-jest@^22.4.5:
-  version "22.4.5"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-22.4.5.tgz#b894f273c7208fa21a77e407dbe12d5e54e8ef72"
+ts-jest@^22.4.6:
+  version "22.4.6"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-22.4.6.tgz#a5d7f5e8b809626d1f4143209d301287472ec344"
   dependencies:
     babel-core "^6.26.3"
     babel-plugin-istanbul "^4.1.6"
@@ -3276,6 +3283,7 @@ ts-jest@^22.4.5:
     jest-config "^22.4.3"
     lodash "^4.17.10"
     pkg-dir "^2.0.0"
+    source-map-support "^0.5.5"
     yargs "^11.0.0"
 
 ts-node@^3.2.0:
@@ -3304,9 +3312,9 @@ tslib@^1.8.0, tslib@^1.8.1:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"
 
-tslint-config-prettier@^1.1.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/tslint-config-prettier/-/tslint-config-prettier-1.12.0.tgz#bc8504f286ecf42b906f3d1126a093114f5729cc"
+tslint-config-prettier@^1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/tslint-config-prettier/-/tslint-config-prettier-1.13.0.tgz#189e821931ad89e0364e4e292d5c44a14e90ecd6"
 
 tslint@^5.0.0:
   version "5.10.0"
@@ -3351,9 +3359,9 @@ type-check@~0.3.2:
   dependencies:
     prelude-ls "~1.1.2"
 
-typescript@^2.3.0:
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.3.tgz#5d817f9b6f31bb871835f4edf0089f21abe6c170"
+typescript@^2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.9.1.tgz#fdb19d2c67a15d11995fd15640e373e09ab09961"
 
 uglify-js@^2.6:
   version "2.8.29"
