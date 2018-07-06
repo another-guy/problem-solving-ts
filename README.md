@@ -12,13 +12,6 @@
 
 ## Table of Contents
 
-1. Practice
-    * [Candidate algorithms](https://github.com/another-guy/problem-solving-ts/blob/master/src/practice/0-0-candidate-algorithms.md)
-    * 1 Graph
-        * 1.1 TopSort (Topological Sorting)
-        * 1.2 Dijkstra's shortest path
-        * 1.3 Prim's minimal spanning tree
-    * 9 Naive (hashtable-based) PriorityQueue
 1. CodinGame
     * Easy
         * Chuck Norris (message encoding)
@@ -40,3 +33,12 @@
         * 8.1 Triple step (non-recursive)
         * 8.2 Robot on a grid (recursive and non-recursive). [[Code Review]](https://codereview.stackexchange.com/questions/194979/robot-on-a-grid-find-a-path-between-two-corners-with-forbidden-cells-on-the-roa)
         * 8.3 Magic index (recursive).
+1. Leet Code
+   * 1 Two Sum
+1. Practice
+    * [Candidate algorithms](https://github.com/another-guy/problem-solving-ts/blob/master/src/practice/0-0-candidate-algorithms.md)
+    * 1 Graph
+        * 1.1 TopSort (Topological Sorting)
+        * 1.2 Dijkstra's shortest path
+        * 1.3 Prim's minimal spanning tree
+    * 9 Naive (hashtable-based) PriorityQueue
