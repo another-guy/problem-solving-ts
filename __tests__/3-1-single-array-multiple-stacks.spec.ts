@@ -63,9 +63,9 @@ describe(MultiStack.name, () => {
 describe(DoubleStack.name, () => {
   describe(`left stack`, () => {
     [
-      { capacity: null, values: [ 1 ] },
-      { capacity: null, values: [ 1, 2 ] },
-      { capacity: null, values: [ 1, 2, 3 ] },
+      { capacity: undefined, values: [ 1 ] },
+      { capacity: undefined, values: [ 1, 2 ] },
+      { capacity: undefined, values: [ 1, 2, 3 ] },
     ].forEach(testCase => {
       it(`Should correctly implement pushLeft(), popLeft(), isEmpty* for ${JSON.stringify(testCase)}`, () => {
         const { capacity, values } = testCase;
@@ -86,7 +86,7 @@ describe(DoubleStack.name, () => {
     });
   
     [
-      { capacity: null, values: [ ] },
+      { capacity: undefined, values: [ ] },
     ].forEach(testCase => {
       it(`Should correctly implement pushLeft(), popLeft(), isEmpty* for ${JSON.stringify(testCase)}`, () => {
         const { capacity, values } = testCase;
@@ -121,9 +121,9 @@ describe(DoubleStack.name, () => {
 
   describe(`right stack`, () => {
     [
-      { capacity: null, values: [ 1 ] },
-      { capacity: null, values: [ 1, 2 ] },
-      { capacity: null, values: [ 1, 2, 3 ] },
+      { capacity: undefined, values: [ 1 ] },
+      { capacity: undefined, values: [ 1, 2 ] },
+      { capacity: undefined, values: [ 1, 2, 3 ] },
     ].forEach(testCase => {
       it(`Should correctly implement pushRight(), popRight(), isEmpty* for ${JSON.stringify(testCase)}`, () => {
         const { capacity, values } = testCase;
@@ -144,7 +144,7 @@ describe(DoubleStack.name, () => {
     });
 
     [
-      { capacity: null, values: [ ] },
+      { capacity: undefined, values: [ ] },
     ].forEach(testCase => {
       it(`Should correctly implement pushRight(), popRight(), isEmpty* for ${JSON.stringify(testCase)}`, () => {
         const { capacity, values } = testCase;
@@ -232,9 +232,9 @@ describe(DoubleStack.name, () => {
 
 describe(SingleStack.name, () => {
   [
-    { capacity: null, values: [ 1 ] },
-    { capacity: null, values: [ 1, 2 ] },
-    { capacity: null, values: [ 1, 2, 3 ] },
+    { capacity: undefined, values: [ 1 ] },
+    { capacity: undefined, values: [ 1, 2 ] },
+    { capacity: undefined, values: [ 1, 2, 3 ] },
   ].forEach(testCase => {
     it(`Should correctly implement push(), pop(), isEmpty for ${JSON.stringify(testCase)}`, () => {
       const { capacity, values } = testCase;
@@ -254,7 +254,7 @@ describe(SingleStack.name, () => {
   });
 
   [
-    { capacity: null, values: [ ] },
+    { capacity: undefined, values: [ ] },
   ].forEach(testCase => {
     it(`Should correctly implement push(), pop(), isEmpty for ${JSON.stringify(testCase)}`, () => {
       const { capacity, values } = testCase;

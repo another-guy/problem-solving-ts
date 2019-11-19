@@ -19,8 +19,8 @@ describe(insertMintoN.name, () => {
     { n: 1024, m: 19, i: 2, j: 6, expectedNumber: 1100 },
     { n: 1198, m: 20, i: 2, j: 6, expectedNumber: 1234 },
   ].forEach(({ n, m, i, j, expectedNumber }) => {
-    const numberFrom = v => ((typeof v === 'number') ? v : Number.parseInt(v, 2)) >>> 0;
-    const bitsFrom = v => (typeof v === 'string') ? v : v.toString(2);
+    const numberFrom = (v: any) => ((typeof v === 'number') ? v : Number.parseInt(v, 2)) >>> 0;
+    const bitsFrom = (v: any) => (typeof v === 'string') ? v : v.toString(2);
     const nNumber = numberFrom(n);
     const mNumber = numberFrom(m);
     const nBits = bitsFrom(n);

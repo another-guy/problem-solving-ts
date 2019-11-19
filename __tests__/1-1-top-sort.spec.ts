@@ -1,27 +1,27 @@
-import { IGraph } from '../src/practice/0-directed-graph';
+import { IDirectedGraph } from '../src/practice/0-directed-graph';
 import { isTopSort, pathExists, topSort } from '../src/practice/1-1-top-sort';
 
-export const singleNode: IGraph = {
+export const singleNode: IDirectedGraph = {
   nodes: ['a'],
   edges: {},
 };
 
-export const loop: IGraph = {
+export const loop: IDirectedGraph = {
   nodes: ['a'],
   edges: { a: ['a'] },
 };
 
-export const shortChain: IGraph = {
+export const shortChain: IDirectedGraph = {
   nodes: ['a', 'b'],
   edges: { a: ['b'] },
 };
 
-export const longChain: IGraph = {
+export const longChain: IDirectedGraph = {
   nodes: ['a', 'b', 'c', 'd'],
   edges: { a: ['b'], b: ['c'], c: ['d'] },
 };
 
-export const linkedChain: IGraph = {
+export const linkedChain: IDirectedGraph = {
   nodes: ['a', 'b', 'c'],
   edges: { a: ['b'], b: ['c'], c: ['a'] },
 };

@@ -4,7 +4,7 @@ import {
   Grid,
 } from '../src/cracking-the-coding-interview/8-recursion-and-dynamic-programming/8-2-robot-in-a-grid';
 
-const nullGrid: Grid = null;
+const nullGrid: Grid | undefined = undefined;
 
 const gridWithSingleBlockedCell: Grid = [['x']];
 
@@ -69,11 +69,11 @@ describe(`${findPathRecursively.name} & ${findPath.name}`, () => {
     const gridText = JSON.stringify(grid, null, 2);
 
     it(`[Recursive] Should return "${path}" for grid\n${gridText}`, () => {
-      expect(findPathRecursively(grid)).toEqual(expectedPath);
+      expect(findPathRecursively(grid!)).toEqual(expectedPath);
     });
 
     it(`[Non-recursive] Should return "${path}" for grid\n${gridText}`, () => {
-      expect(findPath(grid)).toEqual(expectedPath);
+      expect(findPath(grid!)).toEqual(expectedPath);
     });
   });
 });
